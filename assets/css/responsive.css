@@ -1,0 +1,234 @@
+/*******************************
+	All Responsive Code
+*******************************/
+
+
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+	.about-right h3 {
+		margin-bottom: 32px;
+		margin-top: 20px;
+	}
+	.about-left img {
+		width: 100%;
+	}
+	.video-play .video h2 {
+		font-size: 28px;
+		color: #fff;
+		font-weight: 600;
+		margin-bottom: 45px;
+	}
+	.d-table-cell h1 {
+		color: #ffffff;
+		font-size: 42px;
+	}
+
+.d-table-cell h1 {
+    font-size: 39px;
+    margin-top: -29px;
+    margin-bottom: 46px;
+}
+/*	.d-table-cell h1 {
+	    font-size: 55px;
+	}*/
+	.cunter-box {
+		margin-bottom: 35px;
+	}
+	.video-play .video h2 {
+		font-size: 21px;
+	}
+	.owl-carousel .owl-item img {
+		width: 100%;
+	}
+	.d-table-cell p {
+	    color: #ffffff;
+	    max-width: 450px;
+	    margin: 25px auto;
+	    font-size: 14px;
+	    line-height: 24px;
+	    display: none;
+	}
+	.single-item img {
+	    width: 100%;
+	}
+	.blog_item img {
+	    width: 100%;
+	}
+
+
+
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+	.owl-carousel .owl-item img {
+	    max-width: 100%;
+	}
+	.owl-carousel .owl-item img {
+	    max-width: 100%;
+	}
+	.owl-carousel .owl-item img {
+	    max-width: 100%;
+	}
+	.blog_img img {
+	    width: 100% !important;
+	}
+
+.d-table-cell h1 {
+    font-size: 39px;
+}
+}
+.d-table-cell p {
+    line-height: 18px;
+}
+img {}
+
+.about-left img {
+    width: 100%;
+}
+.about-right h3 {
+    margin-bottom: 24px;
+    margin-top: 15px;
+}
+.video-play .video h2 {
+    font-size: 32px;
+}
+.cunter-box {
+    margin-bottom: 30px;
+}
+.single-item img {
+    width: 100%;
+}
+
+/*.skill-right h3 {
+    margin: 0;
+}*/
+.about-right p {
+	padding: 15px;
+}
+.about-right a {
+    margin-left: 15px;
+}
+.about-right h3 {
+    margin-left: 15px;
+}
+
+
+
+
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+	.about-left img {
+		max-width: 100%;
+	} 
+.nav-item {
+    margin-left: 7px !important;
+}
+	.owl-carousel .owl-item img {
+	    display: block;
+	    max-width: auto;
+	    margin: 0 auto;
+	}
+.d-table {
+    margin-top: 34px;
+}
+.d-table-cell h1 {
+    font-size: 54px;
+}
+.d-table-cell p {
+    margin: 3px auto 14px;
+    line-height: 16px;
+}
+
+
+.owl-carousel .owl-item img {
+    max-width: 100%;
+}
+.owl-carousel .owl-item img {
+    max-width: 100%;
+
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+.d-table-cell p {
+    line-height: 25px;
+    font-size: 15px;
+}
+.skill-right h3 {
+    margin-top: 100px;
+}
+
+
+
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+.d-table-cell p {
+    line-height: 25px;
+    font-size: 15px;
+}
+
+
+	
+}
+
+
+
+}
+
+/* This CSS for small Mobile*/
+@media (max-width: 767px) {
+.owl-carousel .owl-item img {
+    max-width: 100%;
+}	
+.owl-carousel .owl-item img {
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+}
+
+/* This CSS for Tablet */
+/*@media (min-width: 768px)*/
+@media (max-width: 768px) {
+.nav-item {
+    position: relative;
+    transition: all 200ms linear;
+    margin-left: 6px !important;
+}
+}
+
+
+
+
+/* This CSS for Medium Devices */
+@media (max-width: 991px) {
+.d-table-cell p {
+    line-height: 24px !important;
+}
+.nav-item {
+    position: relative;
+    transition: all 200ms linear;
+    margin-left: 6px !important;
+}
+
+}
+
+/* This CSS for Large Devices */
+@media (min-width: 1200px) {
+
+
+}
