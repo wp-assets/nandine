@@ -10,10 +10,51 @@ function nandine_wordpress(){
 	add_image_size( 'slider-thumb', 920, 285, true );
 	add_image_size( 'client-thumb', 170, 180, true );
 	add_image_size( 'testimonial-thumb', 150, 150, true );
+	add_image_size( 'portfolio-thumb', 360, 234, true );
+	
+	// Option Panel Include
+	require_once('lib/redux-framework/ReduxCore/framework.php');
+	require_once('lib/redux-framework/sample/config.php');
+	require_once('lib/redux-vendor-support-master/redux-vendor-support.php');
+	require_once('lib/cmb/init.php');
+	
+
+
+	require_once get_template_directory().'/nandine-walker.php';
 	
 	register_nav_menu('mainmenu', __('Main Menu','nandine'));
 	
+// CMB2 Portfolio Link field
+function theme_portfolio_field(){
+
+	$portfolio = new_cmb2_box(
+		array(
+			'id'=>'portfolio_link',
+			'title'=>'Portfolio Section',
+			'object_types'=> array('portfolio'),
+		));
+
+	$portfolio->add_field(array(
+		'id'=>'g_link',
+		'name'=>'Portfolio Text',		
+		'type'=>'text',
+		'desc'=>'you can set your portfolio title from here.',
+		));
+}
+add_action('cmb2_admin_init', 'theme_portfolio_field');
+
+
+
+
 	
+	function default_menu(){
+		echo '<ul class="navbar-nav nav">';
+		echo '<li class="nav-item"><a class="nav-link" href="'.esc_url(home_url()).'">Home</a></li>';
+		echo '</ul>';
+	}
+	
+	
+	load_theme_textdomain('nandine', get_template_directory_uri().'/languages');
 
 	register_post_type('slider', [
 		'public'     					=> true,
@@ -36,7 +77,7 @@ function nandine_wordpress(){
 		'publicly_queryable' => true,
 		'exclude_from_search' => true,
 		'menu_position' => 5,
-		'supports'=>array('title','editor','thumbnail'),
+		'supports'=>array('title','editor'),
 		'menu_icon' => 'dashicons-smiley',
 		'has_archive' => true,
 		'hierarchical' => false, 
@@ -105,7 +146,7 @@ function nandine_wordpress(){
 		'rewrite' => array( 'slug' => 'Service' ),
 
 	]);	
-	register_post_type('team', [
+	register_post_type('our-team', [
 		'public'     					=> true,
 		'labels' 						=> [
 			'name' 						=> 'Nandine Team',
@@ -134,6 +175,7 @@ function nandine_wordpress(){
 		'rewrite' => array( 'slug' => 'team' ),
 
 	]);	
+	
 	
 	register_post_type('testimonial', [
 		'public'     					=> true,
@@ -180,7 +222,7 @@ function nandine_wordpress(){
 			'featured_image'			=> 'Portfolio Image',
 			'remove_featured_image'		=> 'Remove Portfolio Image Easy',
 		],
-		'supports' 						=> ['title', 'editor', 'thumbnail'],
+		'supports' 						=> ['title', 'editor', 'thumbnail', ],
 		'menu_icon'						=> 'dashicons-smiley',
 		'menu_position'					=> 5,
 
@@ -207,22 +249,6 @@ function nandine_wordpress(){
 			'capability_type' => 'portfolio'
 			))
 	);		
-
-			
-	
-	
-	
-	
-	
-	
-	
-}; 
-add_action('after_setup_theme', 'nandine_wordpress');
-
-
-
-
-	
 /* ----------------------------------------------------- */
 /* Filter Taxonomy */
 /* ----------------------------------------------------- */
@@ -243,13 +269,28 @@ add_filter( 'post_class', 'theme_t_wp_taxonomy_post_class', 10, 3 );
 	}
 	return $classes;
 	}
+			
+	
+	
+	
+	
+	
+	
+	
+}; 
+add_action('after_setup_theme', 'nandine_wordpress');
 
 
 
-	function theme_enquque_script(){
-		wp_enqueue_script('jquery');
-	}
-	add_action('wp_enqueue_scripts', 'theme_enquque_script');
+
+function theme_enquque_script(){
+	wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'theme_enquque_script');
+
+
+	
+
 
 //Register Style Css
 /*
@@ -303,7 +344,36 @@ wp_enqueue_script('modernizr');
 };
 add_action('wp_enqueue_scripts', 'nandine_enquque_script');
 
-ini_set('memory_limit','128M');
+
 
 */
+
+function themeslug_enqueue_style() {
+	wp_enqueue_style( 'core', '', false ); 
+}
+
+function themeslug_enqueue_script() {
+	wp_enqueue_script( 'jquery' );
+}
+
+add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_style' );
+add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_script' );
+
+/**
+ * Proper way to enqueue scripts and styles.
+ */
+function wpdocs_theme_name_scripts() {
+    wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+    wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
+
+
+
+
+
+
+
+
+
 ?>

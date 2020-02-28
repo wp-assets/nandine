@@ -30,18 +30,21 @@ jQuery(document).ready(function($){
 		}
 	});
     // Magific Portfolio item Popup
+	
+		jQuery('a[rel=magnific]').magnificPopup({
+			type: 'inline',
+			preloader: false,
+		});	
+	
+	
     jQuery('.image-link').magnificPopup({
     	type:'image',
     		image: {
-
 			  cursor: 'mfp-zoom-out-cur', 
-
 			  titleSrc: 'title', 
 			  verticalFit: true,
-
 			  tError: '<a href="%url%">The image</a> could not be loaded.' // Error message
 			}
-
     });
 
 	// Skill Bar
@@ -76,14 +79,8 @@ jQuery('.counter').each(function() {
 });
 
 
-		jQuery(function() {
-			jQuery("#portfolio_contents").mixitup({
-				effects: ['fade','rotateZ'],
-				easing: 'snap'
-			});				
-		})
-
-
+// Mixitup
+jQuery(".portfolio-content").mixitup();
 
 // Our Team Section
 jQuery('.owl-carousel-team').owlCarousel({
@@ -104,13 +101,7 @@ jQuery('.owl-carousel-team').owlCarousel({
     }
 })
 
-// Testimonial
-jQuery('.').owlCarousel({
-    loop:false,
-    margin:30,
-    nav:true,
-    item:1,
-})
+
 
 
 

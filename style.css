@@ -5,11 +5,19 @@ Author: Mr. Iman
 Author URI: http://alorchokh.com/
 Taxdomain: nandine
 Description: Nandine Is Portfolio Wordpress Theme Bootstrap Responsive Font-Awesome Icon and Google Fonts.
+version: 3.0
 Tags: Portfolio, Business, Corporate, Blog Theme.
 */
 
 *{margin:0; padding:0;}
-.mix{display:none;}
+.wpcf7-form-control.wpcf7-submit {
+	background: red;
+	color: white;
+	border: none;
+	padding: 9px 22px 45px;
+	font-size: 22px;
+	border-radius: 6px;
+}
 
 
 

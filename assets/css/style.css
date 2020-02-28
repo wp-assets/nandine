@@ -133,12 +133,12 @@ p {
     font-size: 14px;
 }
 .nav li a:hover {
-  color: red;
+  color: red !important;
   background: none;
   transition:1s;
 }
 .nav li.current-menu-item a {
-  color: red;
+  color: red !important;
   background: none;
   transition:1s;
 }
@@ -478,13 +478,16 @@ width: 100%;
 /* portfolio css*/
 
 .portfolio-menu li {
-    background: transparent;
-    border: 0;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #3c3c3c;
-    outline: none;
+	background: transparent;
+	border: 0;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	color: #3c3c3c;
+	outline: none;
+	display: inline;
+	margin: 10px;
+	cursor: pointer;
 }
 .portfolio-menu li:hover{
 	color:#ff0000;
@@ -499,7 +502,7 @@ width: 100%;
 .single-item img{
 	max-width: 100%;
 }
-li.mixitup-control-active {
+.portfolio-menu li .mixitup-control-active {
     color: #ed1111;
 }
 .single-item:hover .portfolio-hover{
@@ -782,23 +785,23 @@ footer.footer ul li a:hover {
 button.navbar-toggler {
     background: #f8f2f28c;
 }
-.nav-link{
+.nav li a{
 	color: #fff !important;
 	font-weight: 500;
     transition: all 200ms linear;
 }
-.nav-item:hover .nav-link{
+.nav li a:hover .nav li a{
 	color: #ff0000 !important;
 }
-/*.nav-item.active .nav-link{
+/*.li.active .nav-link{
 	color: #ff0000 !important;
 }*/
-.nav-link {
+.nav li a{
 	position: relative;
-	padding: 5px 0 !important;
+	padding: 5px 25px !important;
 	display: inline-block;
 }
-/*.nav-item:after{
+/*.li:after{
 	position: absolute;
 	bottom: -5px;
 	left: 0;
@@ -809,20 +812,20 @@ button.navbar-toggler {
 	opacity: 0;
     transition: all 200ms linear;
 }*/
-.nav-item:hover:after{
+.li:hover:after{
 	bottom: 0;
 	opacity: 1;
 }
-.nav-item.active:hover:after{
+.li.active:hover:after{
 	opacity: 0;
 }
-.nav-item{
+.li{
 	position: relative;
     transition: all 200ms linear;
 }
 
 
-.nav-item .dropdown-menu {
+.li .dropdown-menu {
     transform: translate3d(0, 10px, 0);
     visibility: hidden;
     opacity: 0;
@@ -832,7 +835,7 @@ button.navbar-toggler {
 	margin: 0;
     transition: all 200ms linear;
 }
-.nav-item.show .dropdown-menu {
+.li.show .dropdown-menu {
     opacity: 1;
     visibility: visible;
 	max-height: 999px;
@@ -873,10 +876,10 @@ button.navbar-toggler {
 	h1{
 		font-size: 38px;
 	}
-	.nav-item:after{
+	.li:after{
 		display: none;
 	}
-	.nav-item::before {
+	.li::before {
 		position: absolute;
 		display: block;
 		top: 15px;
@@ -917,5 +920,5 @@ button.navbar-toggler {
 	}
 
 }
-/**
+
 .portfolio-content .mix{display:none;}
