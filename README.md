@@ -1,2 +1,2 @@
 # nandine
-& Update Theme 
+# Update Theme Nandine only
